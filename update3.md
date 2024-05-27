@@ -36,34 +36,11 @@ PEFT methods address this challenge by fine-tuning only a small subset of the mo
 
 - **Method:**
 
-    Neural networks often contain numerous fully connected layers, where the training process is based on matrix multiplication, and the weight matrices are typically full-rank. However, not all weights are necessary, as some fully connected layers may contribute little information or learn features that are not crucial for the target task. Therefore, full-rank matrices are not essential for fine-tuning. By projecting the weight matrix onto a lower-rank subspace, the model's complexity can be reduced by eliminating unnecessary parameters. This allows the same information to be represented with fewer parameters, reducing computational cost while maintaining performance.
-
-    The implementation of LoRA involves modeling parameter updates by decomposing the pre-trained weight matrix $ W_0 $ into low-rank components. Specifically, the update is represented as:
-
-    $$ W_{0} + \Delta W = W_{0} + BA $$
-
-    where $ W_{0} $ is the original weight matrix, and $ \Delta W $ is the update. LoRA decomposes $ \Delta W $ into two smaller trainable low-rank matrices $ A $ and $ B $, while $ W_{0} $ remains fixed during training. Thus, $ W_0 $ does not receive gradient updates; only $ A $ and $ B $ are trained. This ensures the output dimensions of the model remain constant. LoRA integrates these trainable rank decomposition matrices into each layer of the Transformer architecture (Hu et al., 2021).
-
+    ![](./update3_lora_method1.png)
     ![](./update3_lora.png)
-
-    As depicted in Figure of LoRA, the modified forward pass involves merging the original model's main path with a bypass branch:
-
-    $$h = W_{0}x$$
-
-    \[ h = W_{0}x \]
-
-    $$
-    h = W_{0}x
-    $$
+    ![](./update3_lora_method2.png)
 
 
-    The modified forward pass then becomes:
-
-    $$ h = W_{0}x + \Delta Wx = W_{0}x + BAx $$
-
-    LoRA is typically applied to the self-attention modules $ W_q $ and $ W_v $ layers within the Transformer architecture. The reduction in the number of training parameters depends on the hyperparameter "r" and the shape of the original weights. However, the matrices $ A $ and $ B $ cannot capture all the information encapsulated by $ \Delta W $, meaning LoRA trades off a certain level of performance for reduced computational cost.
-
-    In our project, we leverage LoRA, supported by the Hugging Face integrated PEFT library (Mangrulkar et al., 2022), to efficiently fine-tune our model.
 
 ### 3. Advantages of LoRA
 
@@ -100,7 +77,7 @@ Remember to replace/add files in the folder into the finetune_demo folder.
 1. See the `inference.py` file for an example of how to use the model for inference.
 2. `inference.ipynb` contains the code to perform inference demonstrations.
 
-### 5. Evaluation Criteria
+### 5. Evaluation Criteria[EN/CN]
 Examples of conversations obtained using chatbot：
 
 ![](./update3_evaluation.png)
@@ -136,11 +113,11 @@ Evaluation Criteria Detailed Conditions(Using ChatGPT to help us earn assessment
 
 Please provide a rating for each aspect based on the dialogue provided and assess if the responses are empathetic, supportive, and appropriate for a mental health context.
 
+### Gradio Inference
+
 ### Reference(APA style)
 Hu, E. J., Shen, Y., Wallis, P., Allen-Zhu, Z., Li, Y., Wang, S., Wang, L., & Chen, W. (2021, June 17). LORA: Low-Rank adaptation of Large Language Models. arXiv.org. https://arxiv.org/abs/2106.09685
 
 
 Sourab Mangrulkar, Sylvain Gugger, Lysandre Debut, Younes Belkada, Sayak Paul, & Benjamin Bossan. (2022). PEFT: State-of-the-art Parameter-Efficient Fine-Tuning methods. .
 
-
-This sentence uses `$` delimiters to show math inline:  $\sqrt{3x-1}+(1+x)^2$
