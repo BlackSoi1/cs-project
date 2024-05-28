@@ -16,7 +16,13 @@ Conversations. We've achieved the following milestones:
 
 
 ### 1. The overview of ChatGLM3
-ChatGLM3 is a general language model based on autoregressive gap filling. ChatGLM3, adopts Transformer architecture, and contains about 6B parameters. Its core principle is to learn the grammar, semantics and contextual relationships of the language through unsupervised pre-training of a large amount of Chinese and English corpus. The design of ChatGLM3's custom attention mask is very clever: some tokens in the model are visible to each other, and Some tokens can only see part of the past tokens, but cannot see future tokens. This design utilizes the self-attention mechanism to achieve efficient context understanding and generation. The multi-head attention mechanism enhances the model's ability to capture diverse semantic information, allowing it to perform well in natural language processing tasks such as dialogue systems, text generation, and machine translation. The model is not only able to generate high-quality text, but also performs well in tasks such as dialogue and translation. Notable features of the third generation of ChatGLM include its parameter size of approximately 6B, which makes it a good balance between performance and resource consumption and suitable for local deployment. In addition, ChatGLM3 supports bilingual processing in Chinese and English, which perfectly meets the needs of our project. 
+ChatGLM (Du et al., 2022) is an advanced language model leveraging autoregressive techniques for natural language understanding and generation. It uniquely incorporates an attention mask design that integrates both autoencoding and autoregression strategies. The autoencoding aspect involves randomly removing certain tokens from the input text, enabling the model to reconstruct missing elements based on the surrounding context. Conversely, autoregression sequentially reconstructs tokens, using both the corrupted text and previously predicted sequences as context, thereby enhancing the coherence of generated content. 
+
+The third iteration of ChatGLM, known as ChatGLM3, marks a significant evolution from its predecessors by discarding the autoencoding component and fully embracing a decoder-only architecture. This version embeds input tokens into a high-dimensional vector space, employs rotational position embeddings for positional encoding, and utilizes multiple GLMBlocks. These blocks contain self-attention mechanisms and multilayer perceptrons for deep feature extraction and context understanding, with hierarchical normalization processes enhancing stability and performance. The output layer transforms the hidden state into a vocabulary-sized vector, facilitating efficient natural language generation.
+
+ChatGLM3's vocabulary has been optimized to 65,024 entries, significantly reduced from the 150,528 of the prior model, which accelerates model loading times. The total parameter count of ChatGLM3 is approximately 6 billion, striking an optimal balance between computational performance and resource efficiency, making it particularly well-suited for local deployment. Additionally, this model has undergone pre-training on a large-scale bilingual corpus in both Chinese and English. This extensive and diverse training dataset, coupled with more comprehensive training steps and improved strategies, has enabled the model to master the linguistic patterns, grammatical structures, and vocabulary nuances of both languages, ideally supporting the bilingual nature of our project.
+
+For fine-tuning in multi-turn conversation scenarios, ChatGLM3 includes the provision for spatial tokens, which can be manually integrated into model inputs. In our specific application, we have employed a "system" level prompt that configures the assistant's role as a mental health support counselor. By using distinct "user" and "assistant" tags, the fine-tuned model adeptly captures the dynamics of the conversation, making it particularly effective in multi-turn interactions within mental health support contexts. 
 
 ### 2. LoRA
 
@@ -82,7 +88,11 @@ Examples of conversations obtained using chatbot：
 
 ![](./update3_evaluation.png)
 
-Evaluation Criteria Detailed Conditions(Using ChatGPT to help us earn assessment scores) :
+Followed by a simulated dialogue between a user and the chatbot:
+
+[...conversations...]
+
+And the following are Evaluation Criteria Detailed Conditions:
 
 **Prompt**
 
@@ -113,9 +123,33 @@ Evaluation Criteria Detailed Conditions(Using ChatGPT to help us earn assessment
 
 Please provide a rating for each aspect based on the dialogue provided and assess if the responses are empathetic, supportive, and appropriate for a mental health context.
 
+**Chatbot Evaluation Result**
+
+In the result table, T stands for Therapeutic Relevance, U stands for User Engagement, S stands for Safety in Responses and P stands for Problem Resolution.
+
+1. Result for Chinese Querys
+
+    |  | T | U | S | P |
+    | --- | --- | --- | --- | --- |
+    | average | 3.65 | 3.9 | 4.1 | 3.5 |
+    | max | 4 | 5 | 5 | 4 |
+    | min | 2 | 3 | 3 | 2 |
+2. Result for English Querys
+    |  | T | U | S | P |
+    | --- | --- | --- | --- | --- |
+    | average | 2.9 | 3 | 3.9 | 2.7 |
+    | max | 4 | 4 | 5 | 4 |
+    | min | 1 | 2 | 3 | 2 |
+
+
+
+
+
 ### Gradio Inference
 
 ### Reference(APA style)
+Zhengxiao Du, Yujie Qian, Xiao Liu, Ming Ding, Jiezhong Qiu, Zhilin Yang, and Jie Tang. 2022. Glm: General language model pretraining with autoregressive blank infilling. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 320–335.
+
 Hu, E. J., Shen, Y., Wallis, P., Allen-Zhu, Z., Li, Y., Wang, S., Wang, L., & Chen, W. (2021, June 17). LORA: Low-Rank adaptation of Large Language Models. arXiv.org. https://arxiv.org/abs/2106.09685
 
 
