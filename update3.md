@@ -134,7 +134,9 @@ In the result table, T stands for Therapeutic Relevance, U stands for User Engag
     | average | 3.65 | 3.9 | 4.1 | 3.5 |
     | max | 4 | 5 | 5 | 4 |
     | min | 2 | 3 | 3 | 2 |
+
 2. Result for English Querys
+
     |  | T | U | S | P |
     | --- | --- | --- | --- | --- |
     | average | 2.9 | 3 | 3.9 | 2.7 |
