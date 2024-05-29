@@ -88,6 +88,9 @@ Examples of conversations obtained using chatbot：
 
 ![](./update3_evaluation.png)
 
+![](./update3_evaluation2.png)
+
+
 Followed by a simulated dialogue between a user and the chatbot:
 
 [...conversations...]
@@ -144,10 +147,13 @@ In the result table, T stands for Therapeutic Relevance, U stands for User Engag
     | min | 1 | 2 | 3 | 2 |
 
 
-
-
-
 ### Gradio Inference
+To demonstrate the model and make it easy for later usage, we have transferred the pipeline into Huggingface API which will be convenient to use. We also came up with a demo using gradio to better illustrate our work.
+
+Here are images showing the demo:
+
+![](./update3_chatbot_demo.png)
+
 
 ### Reference(APA style)
 Zhengxiao Du, Yujie Qian, Xiao Liu, Ming Ding, Jiezhong Qiu, Zhilin Yang, and Jie Tang. 2022. Glm: General language model pretraining with autoregressive blank infilling. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 320–335.
