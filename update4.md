@@ -22,7 +22,7 @@ The backend of the MindWellChat system is built around a robust architecture usi
 # English
     en_system_prompt = "When a user enters information about their emotional distress, respond in an empathetic and supportive manner. Be careful not to repeat the user's words directly, but instead provide helpful suggestions, emotional support, or solutions. Try to understand the user's emotional state and provide appropriate emotional feedback and helpful guidance."
 #### 2.2 User prompt
-# English
+##### English
         support_text = (
             "Although the provided documents may contain some noise, they still offer some useful support knowledge, and require yourself to analysis and get the useful information: "
             + doc_text
@@ -32,7 +32,7 @@ The backend of the MindWellChat system is built around a robust architecture usi
             f"Relevant document excerpt: '{support_text}'. When responding, please focus primarily on the user's question. Use the emotion and document information as supplementary references,"
             f" to ensure that the response is both insightful and relevant."
         )
-# Chinese
+##### Chinese
         support_text = (
             "尽管提供的文档可能包含干扰信息，它们仍提供一些有用的相关知识，需要你自己去分析来得到有效信息："
             + doc_text
@@ -42,7 +42,7 @@ The backend of the MindWellChat system is built around a robust architecture usi
             f"相关文档摘要：'{support_text}'. 在回应时，请将主要注意力放在用户的问题上。请使用情绪和文档信息作为辅助参考，"
             f"以确保回答既理解深刻又相关性高。"
         )
-# Detailed
+##### Detailed
 {user_input} is what the user enters
 
 {emotion} is the emotion extracted based on user input
@@ -50,7 +50,7 @@ The backend of the MindWellChat system is built around a robust architecture usi
 {support_text} is a related file retrieved using RAG technology based on user input
 ### 2. Frontend
 
-# Here are some actual illustrations
+#### Here are some actual illustrations
 
 
 ![](./update4_frontend1_process.png)
