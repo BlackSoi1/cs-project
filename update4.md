@@ -18,9 +18,9 @@ During this update phase, we mainly focus on Integrating three modules—Vector 
 The backend of the MindWellChat system is built around a robust architecture using FastAPI, ensuring efficient and scalable API services. At its core, the backend integrates a Vector Store for contextual information retrieval, an Emotion Extractor powered by BERT models for sentiment analysis, and the ChatGLM3 model fine-tuned for empathetic multi-turn conversations. Upon server initialization, the models are readied for operation. The system offer a API that, when called from the frontend with user inputs and system prompts, processes these inputs through the integrated models. The server then returns the chatbot's responses to the user while also maintaining a dialogue history for reference. This streamlined workflow facilitates a seamless user experience and supports the delivery of responsive and empathetic mental health support.
 #### 2.1 System prompt
 ##### Chinese
-    cn_system_prompt = "用户输入了关于其情感困扰的信息，请以同理心和支持性的方式回应。注意不要直接重复用户的话语，而应提供帮助性的建议、情绪支持或解决方案。请尽量理解用户的情绪状态，并给予恰当的情感反馈和有益的指导."
+用户输入了关于其情感困扰的信息，请以同理心和支持性的方式回应。注意不要直接重复用户的话语，而应提供帮助性的建议、情绪支持或解决方案。请尽量理解用户的情绪状态，并给予恰当的情感反馈和有益的指导.
 ##### English
-    en_system_prompt = "When a user enters information about their emotional distress, respond in an empathetic and supportive manner. Be careful not to repeat the user's words directly, but instead provide helpful suggestions, emotional support, or solutions. Try to understand the user's emotional state and provide appropriate emotional feedback and helpful guidance."
+When a user enters information about their emotional distress, respond in an empathetic and supportive manner. Be careful not to repeat the user's words directly, but instead provide helpful suggestions, emotional support, or solutions. Try to understand the user's emotional state and provide appropriate emotional feedback and helpful guidance.
 #### 2.2 User prompt
 ##### English
         support_text = (
@@ -47,7 +47,10 @@ The backend of the MindWellChat system is built around a robust architecture usi
 
 {emotion} is the emotion extracted based on user input
 
-{support_text} is a related file retrieved using RAG technology based on user input
+{doc_text} is a related file retrieved using RAG technology based on user input
+
+{support_text} is the retrieved related file plus a prompt word
+
 ### 2. Frontend
 
 #### Here are some actual illustrations
