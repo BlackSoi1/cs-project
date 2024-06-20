@@ -58,7 +58,7 @@ When a user enters information about their emotional distress, respond in an emp
 {support_text} is the retrieved related file plus a prompt word
 
 ## 2. Frontend
-
+Our chatbot front-end pages are developed using the React framework and TypeScript language, ensuring that the code is robust and maintainable. React provides an efficient component-based development model that makes user interfaces more responsive and extensible. TypeScript enhances the type checking of your code and reduces runtime errors. Data is stored in Supabase, and chat conversations are generated and managed by calling backend APIs for real-time data synchronization and secure storage. The entire project supports Docker containerized deployment, simplifying environment configuration and application distribution, and improving development and O&M efficiency.
 #### Here are some actual illustrations
 
 
