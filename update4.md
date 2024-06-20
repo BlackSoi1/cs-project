@@ -44,7 +44,9 @@ The backend of the MindWellChat system is built around a robust architecture usi
         )
 # Detailed
 {user_input} is what the user enters
+
 {emotion} is the emotion extracted based on user input
+
 {support_text} is a related file retrieved using RAG technology based on user input
 ### 2. Frontend
 
