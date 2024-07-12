@@ -31,7 +31,8 @@ After confirming the evaluation characteristics, an evaluator is needed to asses
 
 Firstly, ChatGPT-4 is cost-effective compared to human experts. Secondly, ChatGPT-4 is completely objective. Unlike human experts, ChatGPT-4, as a large language model, is entirely objective and can perform all evaluations independently. Thirdly, ChatGPT-4 is flexible. When the experiment involves changes, ChatGPT-4 can respond promptly and quickly provide modified results.
 
-As for the detailed procedures, we set MindWellChat to use the following hyperparameters: k=1, threshold=0.85, temperature=0.1. We designed the prompt as follows:       
+As for the detailed procedures, we set MindWellChat to use the following hyperparameters: k=1, threshold=0.85, temperature=0.1. We designed the prompt as follows:   <br/>
+
 ```Followed by a simulated dialogue between a user and the chatbot: 
 
 “conversation samples”(This part stands for the conversation samples from the experiment) 
