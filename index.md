@@ -33,5 +33,5 @@ The objective of this project is to develop a web platform hosting a chatbot tha
 1. **2024-Apr-25**: The team has accomplished all the designed tasks include in the **<span style="color:red; font-weight:bold; font-size:larger;">Project Update Process 2</span>**. The report can be find in the following [page](./update2).
 1. **2024-May-26**: The team has accomplished all the designed tasks include in the **<span style="color:red; font-weight:bold; font-size:larger;">Interim Report</span>**. The report can be find in the following [page](./update3).
 1. **2024-June-21**:The team has accomplished all the designed tasks include in the **<span style="color:red; font-weight:bold; font-size:larger;">Project Update Process 3</span>**. The report can be find in the following [page](./update4).
-1. **2024-June-21**:The team has accomplished all the designed tasks include in the **<span style="color:red; font-weight:bold; font-size:larger;">Project Update Process 4</span>**. The report can be find in the following [page](./update5).
+1. **2024-July-12**:The team has accomplished all the designed tasks include in the **<span style="color:red; font-weight:bold; font-size:larger;">Project Update Process 4</span>**. The report can be find in the following [page](./update5).
 

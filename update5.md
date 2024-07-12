@@ -101,7 +101,9 @@ Context length
 Please provide a rating for each aspect based on the dialogue provided and assess if the responses are empathetic, supportive, and appropriate for a mental health context.
 ```
 ## Experiment Results
-We tested 100 conversations, with 50 in Chinese and 50 in English. Each pair of conversations tested on the two models shared the same topic. The conversations were then evaluated by ChatGPT-4 based on five metrics. Each conversation yielded a five-dimensional result, with each dimension corresponding to one of the evaluation metrics. Each dimension of the result ranged from one to five, where one represents the worst performance and five represents the best performance. The overall results of the experiment are shown in the table below. In the table, therapeutic relevance, user engagement, safety in response, problem resolution, and context length are represented by their initials.
+We tested 100 conversations, with 50 in Chinese and 50 in English. Each pair of conversations tested on the two models shared the same topic. The conversations were then evaluated by ChatGPT-4 based on five metrics. Each conversation yielded a five-dimensional result, with each dimension corresponding to one of the evaluation metrics. Each dimension of the result ranged from one to five, where one represents the worst performance and five represents the best performance. The overall results of the experiment are shown in the table below. In the table, therapeutic relevance, user engagement, safety in response, problem resolution, and context length are represented by their initials.     
+
+
 |          | T       | U       | S       | P       | C       |
 |:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|
 | ChatGLM3 | 3.3269  | 3.5000  | 4.4615  | 3.3077  | 4.0962  |
